@@ -123,4 +123,4 @@ git push origin feature-name
 
 ## 📜 License
 
-This project is licensed under the MIT License. See the LICENSE file for more details.
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/VirajMadhu/pdf_key_matcher/blob/main/LICENSE) file for more details.
