@@ -102,6 +102,11 @@ Unmatched Keywords:
 flask
 ```
 
+- Sample output screenshots
+  ![image](https://github.com/user-attachments/assets/540c755b-54dd-45f7-ac18-6afe0ad3b4b6)
+  ![image](https://github.com/user-attachments/assets/31889746-ae82-45d4-a04f-606d0a26e076)
+
+
 ## 🌟 Contribution
 Contributions are welcome! To get started:
 
