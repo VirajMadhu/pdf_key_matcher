@@ -10,4 +10,4 @@ def calculate_match_percentage(file_words, description_words):
     # Calculate percentage
     match_percentage = (len(matches) / len(desc_set)) * 100 if desc_set else 0
 
-    return match_percentage, list(unmatched)
+    return match_percentage, list(matches),  list(unmatched)

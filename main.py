@@ -12,14 +12,17 @@ def main():
     # Preprocess text
     file_words = preprocess_text(file_text)
     description_words = preprocess_text(description)
-    print(file_words)
     
     # Match keywords
-    match_percentage, unmatched_keywords = calculate_match_percentage(file_words, description_words)
+    match_percentage, matched_keywords, unmatched_keywords = calculate_match_percentage(file_words, description_words)
     
     # Display results
     print("\nMatch Percentage:")
     print(f"{match_percentage:.2f}%")
+    
+    print("\nMatched Keywords:")
+    print(", ".join(matched_keywords))
+    
     print("\nUnmatched Keywords:")
     print(", ".join(unmatched_keywords))
 
