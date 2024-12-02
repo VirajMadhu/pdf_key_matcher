@@ -1,0 +1,28 @@
+# Python cache files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+env/
+
+# PyCharm project files
+.idea/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Log files
+*.log
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Application-specific files
+data/*.pdf        # Exclude example CVs
+data/*.txt        # Exclude example job descriptions (optional)
+
+description.txt
