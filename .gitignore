@@ -26,3 +26,4 @@ data/*.pdf        # Exclude example CVs
 data/*.txt        # Exclude example job descriptions (optional)
 
 description.txt
+file.pdf
