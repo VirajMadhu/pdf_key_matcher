@@ -4,11 +4,14 @@ from utils.matcher import calculate_match_percentage
 from rich.console import Console
 from rich.table import Table
 from rich.panel import Panel
+import pyfiglet
 
 console = Console()
 
 def main():
-    console.rule("[bold blue]PDF Key Matcher[/bold blue]")
+    # Large ASCII heading
+    heading = pyfiglet.figlet_format("PDF Key Matcher")
+    console.print(f"[bold blue]{heading}[/bold blue]")
 
     # Load and preprocess files
     try:
@@ -36,13 +39,13 @@ def main():
     console.print("[bold yellow]Analyzing keywords...[/bold yellow]")
     match_percentage, matched_keywords, unmatched_keywords = calculate_match_percentage(file_words, description_words)
 
-    # Display results
+    # Display results in a minimal, clean layout
     console.rule("[bold green]Results[/bold green]")
     
-    # Display match percentage
-    console.print(f"[bold cyan]Match Percentage:[/bold cyan] [bold magenta]{match_percentage:.2f}%[/bold magenta]")
-    
-    # Display table
+    # Display match percentage prominently
+    console.print(Panel(f"[bold cyan]Match Percentage:[/bold cyan] [bold magenta]{match_percentage:.2f}%[/bold magenta]", style="green"))
+
+    # Display matched and unmatched keywords in a concise table
     keywords_table = Table(title="Keyword Match Analysis", style="blue")
     keywords_table.add_column("Matched Keywords", justify="center", style="green", no_wrap=True)
     keywords_table.add_column("Unmatched Keywords", justify="center", style="red", no_wrap=True)
