@@ -107,8 +107,10 @@ flask
 ```
 
 - Sample output screenshots
-  ![image](https://github.com/user-attachments/assets/540c755b-54dd-45f7-ac18-6afe0ad3b4b6)
-  ![image](https://github.com/user-attachments/assets/31889746-ae82-45d4-a04f-606d0a26e076)
+  
+![image](https://github.com/user-attachments/assets/6a3fe046-716d-4e5a-a9a3-397e11861cae)
+![image](https://github.com/user-attachments/assets/8449212c-e892-42d1-b46f-7738d6ab06fa)
+
 
 
 ## 🌟 Contribution
