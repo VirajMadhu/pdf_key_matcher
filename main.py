@@ -9,33 +9,44 @@ console = Console()
 
 def main():
     console.rule("[bold blue]PDF Key Matcher[/bold blue]")
-    
-    # Load files
-    console.print("\n[bold yellow]Loading files...[/bold yellow]")
-    file_text = extract_text_from_pdf("data/file.pdf")
-    description = load_text_file("data/description.txt")
-    
-    # Preprocess text
-    console.print("[bold yellow]Processing text...[/bold yellow]")
-    file_words = preprocess_text(file_text)
-    description_words = preprocess_text(description)
-    
+
+    # Load and preprocess files
+    try:
+        console.print("\n[bold yellow]Loading files...[/bold yellow]")
+        file_text = extract_text_from_pdf("data/file.pdf")
+        description = load_text_file("data/description.txt")
+        
+        console.print("[bold yellow]Processing text...[/bold yellow]")
+        file_words = preprocess_text(file_text)
+        description_words = preprocess_text(description)
+        
+        # Check if files are empty
+        if not file_words:
+            console.print("[bold red]Error: 'data/file.pdf' is missing or empty.[/bold red]")
+            return
+        if not description_words:
+            console.print("[bold red]Error: 'data/description.txt' is missing or empty.[/bold red]")
+            return
+
+    except FileNotFoundError as e:
+        console.print(f"[bold red]Error: {str(e)}[/bold red]")
+        return
+
     # Match keywords
     console.print("[bold yellow]Analyzing keywords...[/bold yellow]")
     match_percentage, matched_keywords, unmatched_keywords = calculate_match_percentage(file_words, description_words)
-    
+
     # Display results
     console.rule("[bold green]Results[/bold green]")
     
     # Display match percentage
     console.print(f"[bold cyan]Match Percentage:[/bold cyan] [bold magenta]{match_percentage:.2f}%[/bold magenta]")
     
-    # Combined table for matched and unmatched keywords
+    # Display table
     keywords_table = Table(title="Keyword Match Analysis", style="blue")
     keywords_table.add_column("Matched Keywords", justify="center", style="green", no_wrap=True)
     keywords_table.add_column("Unmatched Keywords", justify="center", style="red", no_wrap=True)
     
-    # Populate table
     max_length = max(len(matched_keywords), len(unmatched_keywords))
     for i in range(max_length):
         matched = matched_keywords[i] if i < len(matched_keywords) else ""
