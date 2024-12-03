@@ -25,10 +25,14 @@ pdf_key_matcher/
 │   ├── file_handler.py  # Handles file upload and text extraction
 │   ├── text_processor.py # Text cleaning, preprocessing, and tokenization
 │   ├── matcher.py       # Performs keyword comparison
+│   ├── display.py       # Display outputs in User friendly way
 ├── data/
 │   ├── file.pdf         # Example PDF file (e.g., CV)
 │   ├── description.txt  # Example description file (e.g., job description)
 ├── venv/                # Virtual environment directory
+├── .gitignore
+├── README.md
+├── LICENSE
 └── requirements.txt     # Required Python libraries
 ```
 
